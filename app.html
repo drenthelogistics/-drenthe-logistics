@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Drenthe Logistics</title>
+<title>Drenthe Transport</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -174,7 +174,7 @@ summary{font-size:12px;font-weight:600;color:var(--gray);cursor:pointer;text-tra
     <path d="M134 22 L134 104 L182 104" fill="none" stroke="#4a9fd4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="202" y1="28" x2="202" y2="108" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
     <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">DRENTHE</text>
-    <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">LOGISTICS</text>
+    <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">TRANSPORT</text>
   </svg>
   <div style="text-align:center">
     <div style="font-size:13px;color:#8A9BB0;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">Bedrijfsapp — Alleen voor intern gebruik</div>
@@ -216,7 +216,7 @@ if(sessionStorage.getItem('dl_auth')==='1'){
     <path d="M134 22 L134 104 L182 104" fill="none" stroke="#4a9fd4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="202" y1="28" x2="202" y2="108" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
     <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">DRENTHE</text>
-    <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">LOGISTICS</text>
+    <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">TRANSPORT</text>
   </svg>
   <div id="hdate" style="font-size:11px;color:rgba(255,255,255,0.35)"></div>
 </div>
@@ -913,9 +913,9 @@ function buildWA(lang){
   if(opts.stairs)extras.push(lang==='nl'?'trappenhuis':lang==='de'?'Treppenhaus':'stairs');
   var extStr=extras.length?'\n➕ '+extras.join(', '):'';
   var kmStr=totalKm>0?'\n🚐 '+(lang==='de'?'Strecke':lang==='en'?'Distance':'Afstand')+': '+totalKm+' km'+retStr:'';
-  if(lang==='nl')return greet+'\n\nHierbij mijn offerte:\n\n📍 Van: '+from+'\n📍 Naar: '+to+kmStr+'\n📦 '+cNL[cargo]+extStr+'\n\n💶 Prijs: '+price+'\n\nBetaling per pin of contant.\n\nMet vriendelijke groet,\nGüney\nDrenthe Logistics\n📞 06 849 155 85';
-  if(lang==='de')return greet+'\n\nHiermit mein Angebot:\n\n📍 Von: '+from+'\n📍 Nach: '+to+kmStr+'\n📦 '+cDE[cargo]+extStr+'\n\n💶 Preis: '+price+'\n\nZahlung per Karte oder bar.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85';
-  return greet+'\n\nHere is my quote:\n\n📍 From: '+from+'\n📍 To: '+to+kmStr+'\n📦 '+(cNL[cargo]||cargo)+extStr+'\n\n💶 Price: '+price+'\n\nPayment by card or cash.\n\nKind regards,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85';
+  if(lang==='nl')return greet+'\n\nHierbij mijn offerte:\n\n📍 Van: '+from+'\n📍 Naar: '+to+kmStr+'\n📦 '+cNL[cargo]+extStr+'\n\n💶 Prijs: '+price+'\n\nBetaling per pin of contant.\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n📞 06 849 155 85';
+  if(lang==='de')return greet+'\n\nHiermit mein Angebot:\n\n📍 Von: '+from+'\n📍 Nach: '+to+kmStr+'\n📦 '+cDE[cargo]+extStr+'\n\n💶 Preis: '+price+'\n\nZahlung per Karte oder bar.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85';
+  return greet+'\n\nHere is my quote:\n\n📍 From: '+from+'\n📍 To: '+to+kmStr+'\n📦 '+(cNL[cargo]||cargo)+extStr+'\n\n💶 Price: '+price+'\n\nPayment by card or cash.\n\nKind regards,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85';
 }
 function updateWA(){
   var tip=document.getElementById('wa-tip');if(tip)tip.style.display=curPrice>0?'none':'block';
@@ -938,12 +938,12 @@ function copyWA(){
   setTimeout(function(){btn.textContent='📋 Kopyala & WhatsApp\'a yapıştır';},2500);
 }
 var qTexts={
-  onderweg:'Hallo,\n\nIk ben onderweg naar u! Verwachte aankomsttijd: [SAAT] uur.\n\nVia onderstaande link kunt u mij live volgen op Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nTot zo!\nGuney - Drenthe Logistics\nTel: 06 849 155 85',
-  tracking:'Hallo,\n\nHier kunt u mij live volgen via Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nZodra ik gearriveerd ben, stuur ik u een bevestiging.\n\nGroet,\nGuney - Drenthe Logistics\nTel: 06 849 155 85',
-  geleverd:'Hallo,\n\nUw lading is succesvol afgeleverd!\n\nHartelijk dank voor uw vertrouwen. Tot de volgende keer!\n\nGroet,\nGuney - Drenthe Logistics\nTel: 06 849 155 85',
-  bevestig:'Uitstekend!\n\nIk bevestig de rit:\nVan: [NEREDEN]\nNaar: [NEREYE]\nDatum: [TARİH] om [SAAT]\nPrijs: EUR [FİYAT]\n\nIk zie u dan!\nGuney - Drenthe Logistics\nTel: 06 849 155 85',
-  niet:'Hallo,\n\nHelaas ben ik op [DATUM] niet beschikbaar.\n\nHeeft u een andere datum? Dan help ik u graag!\n\nGroet,\nGuney - Drenthe Logistics\nTel: 06 849 155 85',
-  betaling:'Hallo,\n\nHet openstaande bedrag is EUR [BEDRAG].\nBetaling per pin of contant.\n\nAlvast bedankt!\nDrenthe Logistics\nTel: 06 849 155 85'
+  onderweg:'Hallo,\n\nIk ben onderweg naar u! Verwachte aankomsttijd: [SAAT] uur.\n\nVia onderstaande link kunt u mij live volgen op Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nTot zo!\nGuney - Drenthe Transport\nTel: 06 849 155 85',
+  tracking:'Hallo,\n\nHier kunt u mij live volgen via Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nZodra ik gearriveerd ben, stuur ik u een bevestiging.\n\nGroet,\nGuney - Drenthe Transport\nTel: 06 849 155 85',
+  geleverd:'Hallo,\n\nUw lading is succesvol afgeleverd!\n\nHartelijk dank voor uw vertrouwen. Tot de volgende keer!\n\nGroet,\nGuney - Drenthe Transport\nTel: 06 849 155 85',
+  bevestig:'Uitstekend!\n\nIk bevestig de rit:\nVan: [NEREDEN]\nNaar: [NEREYE]\nDatum: [TARİH] om [SAAT]\nPrijs: EUR [FİYAT]\n\nIk zie u dan!\nGuney - Drenthe Transport\nTel: 06 849 155 85',
+  niet:'Hallo,\n\nHelaas ben ik op [DATUM] niet beschikbaar.\n\nHeeft u een andere datum? Dan help ik u graag!\n\nGroet,\nGuney - Drenthe Transport\nTel: 06 849 155 85',
+  betaling:'Hallo,\n\nHet openstaande bedrag is EUR [BEDRAG].\nBetaling per pin of contant.\n\nAlvast bedankt!\nDrenthe Transport\nTel: 06 849 155 85'
 };
 function copyQ(key){
   navigator.clipboard.writeText(qTexts[key]);
@@ -951,8 +951,8 @@ function copyQ(key){
   el.style.display='block';setTimeout(function(){el.style.display='none';},2000);
 }
 var autoTexts={
-  karsilama:'Hallo! Welkom bij Drenthe Logistics. 👋\n\nWat wilt u vervoeren? Van waar naar waar en wanneer?\n\nDan stuur ik u snel een prijs! 🚐\n— Güney | 06 849 155 85',
-  yokluk:'Hallo! Bedankt voor uw bericht. 🚐\n\nIk ben momenteel niet beschikbaar, maar reageer zo snel mogelijk.\n\nSpoed? Bel: 06 849 155 85\n\nDrenthe Logistics — 24/7 actief in NL & Duitsland.'
+  karsilama:'Hallo! Welkom bij Drenthe Transport. 👋\n\nWat wilt u vervoeren? Van waar naar waar en wanneer?\n\nDan stuur ik u snel een prijs! 🚐\n— Güney | 06 849 155 85',
+  yokluk:'Hallo! Bedankt voor uw bericht. 🚐\n\nIk ben momenteel niet beschikbaar, maar reageer zo snel mogelijk.\n\nSpoed? Bel: 06 849 155 85\n\nDrenthe Transport — 24/7 actief in NL & Duitsland.'
 };
 function copyAuto(key){
   navigator.clipboard.writeText(autoTexts[key]);
@@ -960,8 +960,8 @@ function copyAuto(key){
   el.style.display='block';setTimeout(function(){el.style.display='none';},2000);
 }
 var tmpls=[
-  {name:'👋 İlk mesaj (NL)',text:'Hallo! 👋\n\nBedankt voor uw bericht. Ik ben Güney van Drenthe Logistics.\n\nKunt u mij het volgende laten weten?\n• Wat wilt u vervoeren?\n• Van waar naar waar?\n• Wanneer?\n\nDan stuur ik u zo snel mogelijk een prijs! 🚐'},
-  {name:'👋 Erste Nachricht (DE)',text:'Hallo! 👋\n\nVielen Dank für Ihre Nachricht. Ich bin Güney von Drenthe Logistics.\n\nKönnten Sie mir folgendes mitteilen?\n• Was möchten Sie transportieren?\n• Von wo nach wo?\n• Wann?\n\nIch sende Ihnen so schnell wie möglich einen Preis! 🚐'},
+  {name:'👋 İlk mesaj (NL)',text:'Hallo! 👋\n\nBedankt voor uw bericht. Ik ben Güney van Drenthe Transport.\n\nKunt u mij het volgende laten weten?\n• Wat wilt u vervoeren?\n• Van waar naar waar?\n• Wanneer?\n\nDan stuur ik u zo snel mogelijk een prijs! 🚐'},
+  {name:'👋 Erste Nachricht (DE)',text:'Hallo! 👋\n\nVielen Dank für Ihre Nachricht. Ich bin Güney von Drenthe Transport.\n\nKönnten Sie mir folgendes mitteilen?\n• Was möchten Sie transportieren?\n• Von wo nach wo?\n• Wann?\n\nIch sende Ihnen so schnell wie möglich einen Preis! 🚐'},
   {name:'⚡ Acil teklif',text:'Hallo,\n\nVoor een spoedrit hanteer ik de volgende prijs:\n\n📍 [NEREDEN] → [NEREYE]\n⚡ Spoedtarief: €[FİYAT]\n\nIk kan binnen [X] uur vertrekken. Zeg het maar! 🚐'},
   {name:'✅ Sipariş onayı',text:'Uitstekend! ✅\n\nIk bevestig de rit:\n📍 [NEREDEN] → [NEREYE]\n📅 [TARİH] om [SAAT]\n💶 €[FİYAT]\n\nTot dan! 🚐'},
 ];
@@ -989,12 +989,12 @@ function mailTeklif(){
   var km=gv('km'),ret=document.getElementById('ret').value,totalKm=ret!=='0'?km*2:km;
   var cust=flow.klant?flow.klant.name:'',price=curPrice>0?'€'+curPrice.toFixed(0):'€—';
   var retlbl=ret==='1'?(lang==='nl'?' (retour)':lang==='de'?' (H&R)':' (return)'):ret==='2'?(lang==='nl'?' (leeg)':lang==='de'?' (Leer)':' (empty)'):'';
-  var subjs={nl:'Offerte Drenthe Logistics — '+from+' → '+to,de:'Angebot Drenthe Logistics — '+from+' → '+to,en:'Quote Drenthe Logistics — '+from+' → '+to};
+  var subjs={nl:'Offerte Drenthe Transport — '+from+' → '+to,de:'Angebot Drenthe Transport — '+from+' → '+to,en:'Quote Drenthe Transport — '+from+' → '+to};
   var g={nl:'Geachte '+(cust||'heer/mevrouw')+',',de:'Sehr geehrte/r '+(cust||'Damen und Herren')+',',en:'Dear '+(cust||'Sir/Madam')+','};
   var msgs={
-    nl:g.nl+'\n\nHierbij ontvangt u onze offerte:\n\n📍 Van: '+from+'\n📍 Naar: '+to+(totalKm>0?'\n🚐 Afstand: '+totalKm+' km'+retlbl:'')+'\n📦 '+cNL[cargo]+'\n💶 Prijs: '+price+'\n\nBetaling per pin of contant.\n\nMet vriendelijke groet,\nGüney\nDrenthe Logistics\n📞 06 849 155 85\n🌐 drenthelogistics.nl',
-    de:g.de+'\n\nHiermit erhalten Sie unser Angebot:\n\n📍 Von: '+from+'\n📍 Nach: '+to+(totalKm>0?'\n🚐 Strecke: '+totalKm+' km'+retlbl:'')+'\n📦 '+cDE[cargo]+'\n💶 Preis: '+price+'\n\nZahlung per Karte oder bar.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85\n🌐 drenthelogistics.nl',
-    en:g.en+'\n\nPlease find our quote below:\n\n📍 From: '+from+'\n📍 To: '+to+(totalKm>0?'\n🚐 Distance: '+totalKm+' km'+retlbl:'')+'\n📦 '+(cNL[cargo]||cargo)+'\n💶 Price: '+price+'\n\nPayment by card or cash.\n\nKind regards,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85\n🌐 drenthelogistics.nl'
+    nl:g.nl+'\n\nHierbij ontvangt u onze offerte:\n\n📍 Van: '+from+'\n📍 Naar: '+to+(totalKm>0?'\n🚐 Afstand: '+totalKm+' km'+retlbl:'')+'\n📦 '+cNL[cargo]+'\n💶 Prijs: '+price+'\n\nBetaling per pin of contant.\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n📞 06 849 155 85\n🌐 drenthetransport.com',
+    de:g.de+'\n\nHiermit erhalten Sie unser Angebot:\n\n📍 Von: '+from+'\n📍 Nach: '+to+(totalKm>0?'\n🚐 Strecke: '+totalKm+' km'+retlbl:'')+'\n📦 '+cDE[cargo]+'\n💶 Preis: '+price+'\n\nZahlung per Karte oder bar.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85\n🌐 drenthetransport.com',
+    en:g.en+'\n\nPlease find our quote below:\n\n📍 From: '+from+'\n📍 To: '+to+(totalKm>0?'\n🚐 Distance: '+totalKm+' km'+retlbl:'')+'\n📦 '+(cNL[cargo]||cargo)+'\n💶 Price: '+price+'\n\nPayment by card or cash.\n\nKind regards,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85\n🌐 drenthetransport.com'
   };
   ejsSend(toEmail,subjs[lang],msgs[lang],
     function(){btn.textContent='📧 Mail teklifi gönder';btn.disabled=false;showMsg('mail-ok','mail-err',true);},
@@ -1559,7 +1559,7 @@ function openFactuur(){
   var parts=nr.split('-');
   if(parts.length===2&&!isNaN(parts[1]))document.getElementById('inv-nr').value=parts[0]+'-'+String(parseInt(parts[1])+1).padStart(3,'0');
   localStorage.setItem('dl_factuur_prefill',JSON.stringify(data));
-  window.open('https://drenthelogistics.nl/factuur.html','_blank');
+  window.open('https://drenthetransport.com/factuur.html','_blank');
 }
 function mailFatura(){
   var klantId=document.getElementById('inv-klant').value;
@@ -1571,13 +1571,13 @@ function mailFatura(){
   var lang=document.getElementById('inv-lang').value||'nl';
   var data={nr:nr,lang:lang,date:today(),due:new Date(new Date().setDate(new Date().getDate()+14)).toISOString().split('T')[0],cn:k?k.name:'',ca:k?(k.addr||''):'',ce:k?(k.email||''):'',cb:'',note:'',items:curPrice>0?[{desc:(document.getElementById('from').value||'—')+' → '+(document.getElementById('to').value||'—'),qty:1,price:curPrice}]:[{desc:'Transport',qty:1,price:0}]};
   var encoded=btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-  var link='https://drenthelogistics.nl/factuur.html?f='+encoded;
-  var subjs={nl:'Factuur '+nr+' — Drenthe Logistics',de:'Rechnung '+nr+' — Drenthe Logistics',en:'Invoice '+nr+' — Drenthe Logistics'};
+  var link='https://drenthetransport.com/factuur.html?f='+encoded;
+  var subjs={nl:'Factuur '+nr+' — Drenthe Transport',de:'Rechnung '+nr+' — Drenthe Transport',en:'Invoice '+nr+' — Drenthe Transport'};
   var g={nl:'Geachte '+(k?k.name:'heer/mevrouw')+',',de:'Sehr geehrte/r '+(k?k.name:'Damen und Herren')+',',en:'Dear '+(k?k.name:'Sir/Madam')+','};
   var msgs={
-    nl:g.nl+'\n\nHierbij uw factuur.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nMet vriendelijke groet,\nGüney\nDrenthe Logistics\n📞 06 849 155 85',
-    de:g.de+'\n\nIhre Rechnung.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85',
-    en:g.en+'\n\nYour invoice.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nKind regards,\nGüney\nDrenthe Logistics\n📞 +31 6 849 155 85'
+    nl:g.nl+'\n\nHierbij uw factuur.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n📞 06 849 155 85',
+    de:g.de+'\n\nIhre Rechnung.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85',
+    en:g.en+'\n\nYour invoice.\n\n📄 '+nr+(curPrice>0?'\n💶 €'+curPrice.toFixed(0):'')+'\n\n'+link+'\n\nKind regards,\nGüney\nDrenthe Transport\n📞 +31 6 849 155 85'
   };
   ejsSend(toEmail,subjs[lang],msgs[lang],
     function(){btn.textContent='📧 Fatura linki mail gönder';btn.disabled=false;showMsg('mail-fatura-ok','mail-fatura-err',true);},

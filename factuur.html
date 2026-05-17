@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drenthe Logistics — Factuur</title>
+<title>Drenthe Transport — Factuur</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -119,7 +119,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
 <body class="editor-mode">
 
 <header>
-  <div class="logo">DRENTHE<span>.</span>LOGISTICS</div>
+  <div class="logo">DRENTHE<span>.</span>TRANSPORT</div>
   <span style="color:#445;font-size:11px">Factuur Systeem</span>
 </header>
 
@@ -208,7 +208,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
   <div class="invoice">
     <div class="inv-head">
       <div>
-        <div class="inv-logo">DRENTHE<span>.</span>LOGISTICS</div>
+        <div class="inv-logo">DRENTHE<span>.</span>TRANSPORT</div>
         <div class="inv-logo-sub">Transport & Koeriersdiensten</div>
         <div class="inv-logo-line"></div>
       </div>
@@ -217,7 +217,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     <div class="inv-addresses">
       <div class="inv-addr">
         <h4 id="inv-from-lbl">Van</h4>
-        <p>Drenthe Logistics<br>Hoogeveen, Drenthe<br>contact@drenthelogistics.nl<br>06 849 155 85<br>drenthelogistics.nl</p>
+        <p>Drenthe Transport<br>Hoogeveen, Drenthe<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com</p>
       </div>
       <div class="inv-addr">
         <h4 id="inv-to-lbl">Aan</h4>
@@ -254,7 +254,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
         <p id="inv-payment">Gelieve het totaalbedrag binnen 14 dagen over te maken.<br>Op grond van de KOR is geen BTW berekend.</p>
       </div>
       <div>
-        <p>Drenthe Logistics<br>contact@drenthelogistics.nl<br>06 849 155 85<br>drenthelogistics.nl</p>
+        <p>Drenthe Transport<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com</p>
       </div>
     </div>
   </div>
@@ -283,9 +283,9 @@ var saved = JSON.parse(localStorage.getItem('dl_invoices') || '[]');
 var currentLink = '';
 
 var TR = {
-  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (0% — KOR)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. Op grond van de KOR is geen BTW berekend.', pbar:'Uw factuur van Drenthe Logistics' },
-  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (0%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. No VAT charged under the Small Business Scheme.', pbar:'Your invoice from Drenthe Logistics' },
-  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (0%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. Gemäß der KOR wird keine MwSt. berechnet.', pbar:'Ihre Rechnung von Drenthe Logistics' }
+  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (0% — KOR)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. Op grond van de KOR is geen BTW berekend.', pbar:'Uw factuur van Drenthe Transport' },
+  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (0%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. No VAT charged under the Small Business Scheme.', pbar:'Your invoice from Drenthe Transport' },
+  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (0%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. Gemäß der KOR wird keine MwSt. berechnet.', pbar:'Ihre Rechnung von Drenthe Transport' }
 };
 
 function fmtM(n) { return '€ ' + n.toFixed(2).replace('.', ','); }
@@ -395,9 +395,9 @@ function sendWA() {
   var nr = document.getElementById('inv-nr').value || '—';
   var lang = document.getElementById('inv-lang').value;
   var msgs = {
-    nl: 'Hallo,\n\nHierbij uw factuur van Drenthe Logistics:\n' + currentLink + '\n\nU kunt de factuur openen en als PDF downloaden.\n\nMet vriendelijke groet,\nGüney\nDrenthe Logistics\n06 849 155 85',
-    en: 'Hello,\n\nPlease find your invoice from Drenthe Logistics:\n' + currentLink + '\n\nYou can open and download the invoice as PDF.\n\nKind regards,\nGüney\nDrenthe Logistics\n+31 6 849 155 85',
-    de: 'Hallo,\n\nHier ist Ihre Rechnung von Drenthe Logistics:\n' + currentLink + '\n\nSie können die Rechnung öffnen und als PDF herunterladen.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Logistics\n+31 6 849 155 85'
+    nl: 'Hallo,\n\nHierbij uw factuur van Drenthe Transport:\n' + currentLink + '\n\nU kunt de factuur openen en als PDF downloaden.\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n06 849 155 85',
+    en: 'Hello,\n\nPlease find your invoice from Drenthe Transport:\n' + currentLink + '\n\nYou can open and download the invoice as PDF.\n\nKind regards,\nGüney\nDrenthe Transport\n+31 6 849 155 85',
+    de: 'Hallo,\n\nHier ist Ihre Rechnung von Drenthe Transport:\n' + currentLink + '\n\nSie können die Rechnung öffnen und als PDF herunterladen.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n+31 6 849 155 85'
   };
   var text = encodeURIComponent(msgs[lang]);
   window.open('https://wa.me/?text=' + text, '_blank');
@@ -406,11 +406,11 @@ function sendWA() {
 function openMailModal() {
   var lang = document.getElementById('inv-lang').value;
   var nr = document.getElementById('inv-nr').value || '—';
-  var subjects = { nl:'Factuur '+nr+' — Drenthe Logistics', en:'Invoice '+nr+' — Drenthe Logistics', de:'Rechnung '+nr+' — Drenthe Logistics' };
+  var subjects = { nl:'Factuur '+nr+' — Drenthe Transport', en:'Invoice '+nr+' — Drenthe Transport', de:'Rechnung '+nr+' — Drenthe Transport' };
   var msgs = {
-    nl:'Geachte heer/mevrouw,\n\nHierbij ontvangt u uw factuur van Drenthe Logistics.\n\nU kunt de factuur bekijken en als PDF downloaden via onderstaande link:\n\n' + currentLink + '\n\nMet vriendelijke groet,\nGüney\nDrenthe Logistics\n06 849 155 85\ncontact@drenthelogistics.nl',
-    en:'Dear Sir/Madam,\n\nPlease find your invoice from Drenthe Logistics.\n\nYou can view and download the invoice as PDF via the link below:\n\n' + currentLink + '\n\nKind regards,\nGüney\nDrenthe Logistics\n+31 6 849 155 85\ncontact@drenthelogistics.nl',
-    de:'Sehr geehrte Damen und Herren,\n\nHier ist Ihre Rechnung von Drenthe Logistics.\n\nSie können die Rechnung über den folgenden Link einsehen und als PDF herunterladen:\n\n' + currentLink + '\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Logistics\n+31 6 849 155 85\ncontact@drenthelogistics.nl'
+    nl:'Geachte heer/mevrouw,\n\nHierbij ontvangt u uw factuur van Drenthe Transport.\n\nU kunt de factuur bekijken en als PDF downloaden via onderstaande link:\n\n' + currentLink + '\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n06 849 155 85\ncontact@drenthetransport.com',
+    en:'Dear Sir/Madam,\n\nPlease find your invoice from Drenthe Transport.\n\nYou can view and download the invoice as PDF via the link below:\n\n' + currentLink + '\n\nKind regards,\nGüney\nDrenthe Transport\n+31 6 849 155 85\ncontact@drenthetransport.com',
+    de:'Sehr geehrte Damen und Herren,\n\nHier ist Ihre Rechnung von Drenthe Transport.\n\nSie können die Rechnung über den folgenden Link einsehen und als PDF herunterladen:\n\n' + currentLink + '\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n+31 6 849 155 85\ncontact@drenthetransport.com'
   };
   document.getElementById('send-subject').value = subjects[lang];
   document.getElementById('send-msg').value = msgs[lang];
@@ -557,7 +557,7 @@ function renderViewer(data) {
   document.getElementById('inv-sub').textContent = fmtM(sub);
   document.getElementById('inv-tot').textContent = fmtM(sub);
   if (data.note) { var nb=document.getElementById('inv-note-box'); nb.textContent=data.note; nb.style.display='block'; }
-  document.title = t.badge + ' ' + (data.nr||'') + ' — Drenthe Logistics';
+  document.title = t.badge + ' ' + (data.nr||'') + ' — Drenthe Transport';
 }
 
 loadFromURL();
