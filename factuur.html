@@ -56,7 +56,12 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
 .link-box { background: var(--navy); border-radius: 10px; padding: 20px; margin-bottom: 14px; display: none; }
 .link-box.show { display: block; }
 .link-label { font-size: 11px; color: #445; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
-.link-url { background: #162436; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #8A9BB0; word-break: break-all; margin-bottom: 12px; line-height: 1.5; }
+.link-url { background: #162436; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #8A9BB0; word-break: break-all; margin-bottom: 12px; line-height: 1.5; display:none; }
+.link-preview { background: linear-gradient(135deg,#0D2B5E,#162d55); border:1px solid rgba(30,111,200,0.3); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; display:flex; align-items:center; gap:14px; }
+.link-preview-icon { width:44px; height:44px; background:rgba(30,111,200,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.link-preview-info { flex:1; overflow:hidden; }
+.link-preview-title { font-size:14px; font-weight:700; color:#fff; margin-bottom:3px; }
+.link-preview-sub { font-size:12px; color:#8A9BB0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .link-btns { display: flex; gap: 8px; }
 .link-btn { flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: Arial; }
 .lbtn-copy { background: var(--orange); color: #fff; }
@@ -166,7 +171,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     <button class="add-item-btn" id="add-btn" type="button">+ Kalem ekle</button>
     <div class="totaal">
       <div class="trow"><span>Ara toplam</span><span id="t-sub">€ 0,00</span></div>
-      <div class="trow"><span>BTW (0% — KOR)</span><span>€ 0,00</span></div>
+      <div class="trow"><span>BTW (21%)</span><span id="preview-btw">€ 0,00</span></div>
       <div class="trow final"><span>Totaal</span><span id="t-total">€ 0,00</span></div>
     </div>
   </div>
@@ -181,6 +186,13 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
   <!-- Link kutusu -->
   <div class="link-box" id="link-box">
     <div class="link-label">Fatura linki hazır — müşteriye gönder</div>
+    <div class="link-preview">
+      <div class="link-preview-icon">🧾</div>
+      <div class="link-preview-info">
+        <div class="link-preview-title" id="link-preview-title">Fatura</div>
+        <div class="link-preview-sub">drenthetransport.com/factuur.html</div>
+      </div>
+    </div>
     <div class="link-url" id="link-url"></div>
     <div class="link-btns">
       <button class="link-btn lbtn-copy" onclick="copyLink()">📋 Kopyala</button>
@@ -244,14 +256,14 @@ input:focus, select:focus, textarea:focus { border-color: var(--orange); }
     <div class="inv-totals">
       <div class="inv-totals-box">
         <div class="inv-trow"><span id="inv-sub-lbl">Subtotaal</span><span id="inv-sub">€ 0,00</span></div>
-        <div class="inv-trow"><span id="inv-btw-lbl">BTW (0%)</span><span>€ 0,00</span></div>
+        <div class="inv-trow"><span id="inv-btw-lbl">BTW (21%)</span><span>€ 0,00</span></div>
         <div class="inv-trow"><span id="inv-tot-lbl">Totaalbedrag</span><span id="inv-tot">€ 0,00</span></div>
       </div>
     </div>
     <div class="inv-footer">
       <div>
         <div class="thanks" id="inv-thanks">Hartelijk dank voor uw vertrouwen!</div>
-        <p id="inv-payment">Gelieve het totaalbedrag binnen 14 dagen over te maken.<br>Op grond van de KOR is geen BTW berekend.</p>
+        <p id="inv-payment">Gelieve het totaalbedrag binnen 14 dagen over te maken.<br>BTW 21% is inbegrepen in het totaalbedrag.</p>
       </div>
       <div>
         <p>Drenthe Transport<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com</p>
@@ -283,9 +295,9 @@ var saved = JSON.parse(localStorage.getItem('dl_invoices') || '[]');
 var currentLink = '';
 
 var TR = {
-  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (0% — KOR)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. Op grond van de KOR is geen BTW berekend.', pbar:'Uw factuur van Drenthe Transport' },
-  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (0%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. No VAT charged under the Small Business Scheme.', pbar:'Your invoice from Drenthe Transport' },
-  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (0%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. Gemäß der KOR wird keine MwSt. berechnet.', pbar:'Ihre Rechnung von Drenthe Transport' }
+  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (21%)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. BTW 21% is inbegrepen in het totaalbedrag.', pbar:'Uw factuur van Drenthe Transport' },
+  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (21%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. VAT 21% is included in the total amount.', pbar:'Your invoice from Drenthe Transport' },
+  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (21%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. MwSt. 21% ist im Gesamtbetrag enthalten.', pbar:'Ihre Rechnung von Drenthe Transport' }
 };
 
 function fmtM(n) { return '€ ' + n.toFixed(2).replace('.', ','); }
@@ -359,8 +371,13 @@ function renderItems() {
 
 function calcTotals() {
   var sub = items.reduce(function(s,it){return s+(it.qty||0)*(it.price||0);},0);
+  var btw = Math.round(sub * 0.21 * 100) / 100;
+  var total = sub + btw;
   document.getElementById('t-sub').textContent = fmtM(sub);
-  document.getElementById('t-total').textContent = fmtM(sub);
+  document.getElementById('t-total').textContent = fmtM(total);
+  // Preview BTW
+  var pb = document.getElementById('preview-btw');
+  if(pb) pb.textContent = fmtM(btw);
 }
 
 // Generate link
@@ -381,6 +398,11 @@ document.getElementById('gen-link-btn').addEventListener('click', function() {
   var link = window.location.href.split('?')[0] + '?f=' + encoded;
   currentLink = link;
   document.getElementById('link-url').textContent = link;
+  // Güzel önizleme
+  var nr = document.getElementById('inv-nr').value || '—';
+  var cn = document.getElementById('cust-name').value || 'Müşteri';
+  var titleEl = document.getElementById('link-preview-title');
+  if(titleEl) titleEl.textContent = 'Factuur ' + nr + ' — ' + cn;
   document.getElementById('link-box').classList.add('show');
 });
 
@@ -554,8 +576,13 @@ function renderViewer(data) {
     rowsHTML += '<tr><td>'+(it.desc||'—')+'</td><td>'+it.qty+'</td><td>'+fmtM(it.price)+'</td><td>'+fmtM(line)+'</td></tr>';
   });
   document.getElementById('inv-rows').innerHTML = rowsHTML;
+  var btw = Math.round(sub * 0.21 * 100) / 100;
+  var total = sub + btw;
   document.getElementById('inv-sub').textContent = fmtM(sub);
-  document.getElementById('inv-tot').textContent = fmtM(sub);
+  var btwEl = document.getElementById('inv-btw-val');
+  if(btwEl) btwEl.textContent = fmtM(btw);
+  document.getElementById('inv-btw-lbl').textContent = t.btw;
+  document.getElementById('inv-tot').textContent = fmtM(total);
   if (data.note) { var nb=document.getElementById('inv-note-box'); nb.textContent=data.note; nb.style.display='block'; }
   document.title = t.badge + ' ' + (data.nr||'') + ' — Drenthe Transport';
 }
