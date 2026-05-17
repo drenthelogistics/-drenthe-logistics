@@ -1614,13 +1614,13 @@ function appCityAC(inp,dropId){
   if(q.length<3){drop.classList.remove('open');return;}
   clearTimeout(appAcTimer);
   appAcTimer=setTimeout(function(){
-    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=de&bbox=3.3,50.7,15.1,55.1')
+    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=de&bbox=-10,35,35,72')
     .then(function(r){return r.json();})
     .then(function(data){
       if(!data.features||!data.features.length){drop.classList.remove('open');return;}
       var items=data.features.filter(function(f){
         var c=f.properties.countrycode;
-        return c==='NL'||c==='DE'||c==='BE';
+        return ['NL','DE','BE','FR','PL','TR','LU'].indexOf(c)!==-1;
       }).slice(0,6);
       if(!items.length){drop.classList.remove('open');return;}
       drop.innerHTML=items.map(function(f){

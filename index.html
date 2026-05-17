@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drenthe Transport — Transport & Koeriersdiensten | 24/7</title>
-<meta name="description" content="Snel, betrouwbaar transport door heel Nederland en Duitsland. Pallets, meubels, motorfietsen, spoedritten. 24/7 bereikbaar. Bel 06 849 155 85.">
+<meta name="description" content="Snel, betrouwbaar transport door heel heel Europa & Turkije. Pallets, meubels, motorfietsen, spoedritten. 24/7 bereikbaar. Bel 06 849 155 85.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -175,20 +175,38 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
 @media(max-width:768px){
   nav{padding:0 16px;}
   .nav-links{display:none;}
-  .hero{padding:88px 20px 52px;}
-  .hero h1{font-size:38px;}
-  .trust-bar{padding:14px 20px;gap:16px;}
-  .calc-section{padding:52px 20px;}
+  .hero{padding:88px 20px 52px;min-height:auto;}
+  .hero h1{font-size:34px;letter-spacing:-1px;}
+  .hero-desc{font-size:14px;}
+  .hero-btns{gap:8px;}
+  .hero-stats{gap:20px;}
+  .hs-num{font-size:24px;}
+  .trust-bar{padding:14px 20px;gap:14px;overflow-x:auto;flex-wrap:nowrap;}
+  .ti{white-space:nowrap;}
+  .calc-section{padding:40px 16px;}
+  .sec-ttl{font-size:28px;}
   .calc-wrap{grid-template-columns:1fr;}
   .calc-right{position:static;}
   .addr-row,.name-row{grid-template-columns:1fr;}
   .tarief-grid{grid-template-columns:repeat(3,1fr);}
-  .how-section,.srv-section,.about-section,.contact-section{padding:52px 20px;}
-  .steps,.srv-grid{grid-template-columns:1fr 1fr;}
-  .about-section,.contact-section{grid-template-columns:1fr;gap:36px;}
+  .how-section,.srv-section,.about-section,.contact-section{padding:40px 16px;}
+  .steps{grid-template-columns:1fr;}
+  .srv-grid{grid-template-columns:1fr;}
+  .about-section,.contact-section{grid-template-columns:1fr;gap:32px;}
+  .contact-section>div:first-child>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
   footer{flex-direction:column;gap:6px;text-align:center;padding:18px;}
+  .pb-price{font-size:52px;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:28px;}
+  .hero-stats{gap:14px;}
+  .hs-num{font-size:20px;}
+  .tarief-grid{grid-template-columns:1fr 1fr 1fr;}
+  .tb-icon{font-size:16px;}
+  .tb-name{font-size:11px;}
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -209,7 +227,10 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
     <a href="#diensten" class="t-nl">Diensten</a><a href="#diensten" class="t-en">Services</a><a href="#diensten" class="t-de">Leistungen</a><a href="#diensten" class="t-tr">Hizmetler</a>
     <a href="#over" class="t-nl">Over ons</a><a href="#over" class="t-en">About</a><a href="#over" class="t-de">Über uns</a><a href="#over" class="t-tr">Hakkımızda</a>
     <a href="#contact">Contact</a>
-    <a href="tel:0684915585" class="nav-cta">📞 06 849 155 85</a>
+    <a href="https://wa.me/31684915585" target="_blank" class="nav-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white" style="vertical-align:middle;margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
   </div>
   <div class="lang-btns">
     <button class="lang-btn on" onclick="setLang('nl')" id="btn-nl">NL</button>
@@ -225,18 +246,18 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-badge"><div class="pulse"></div>
-      <span class="t-nl">24/7 bereikbaar · NL & Duitsland</span>
-      <span class="t-en">24/7 available · NL & Germany</span>
-      <span class="t-de">24/7 erreichbar · NL & Deutschland</span>
-      <span class="t-tr">24/7 ulaşılabilir · NL & Almanya</span>
+      <span class="t-nl">24/7 bereikbaar · Europa & Turkije</span>
+      <span class="t-en">24/7 available · Europe & Turkey</span>
+      <span class="t-de">24/7 erreichbar · Europa & Türkei</span>
+      <span class="t-tr">24/7 ulaşılabilir · Avrupa & Türkiye</span>
     </div>
-    <h1 class="t-nl">Transport &<br><em>Koeriersdienst</em><br>Noord-Nederland</h1>
+    <h1 class="t-nl">Transport &<br><em>Koeriersdienst</em><br>Heel Europa</h1>
     <h1 class="t-en">Transport &<br><em>Courier Service</em><br>North Netherlands</h1>
     <h1 class="t-de">Transport &<br><em>Kurierdienst</em><br>Nord-Niederlande</h1>
     <h1 class="t-tr">Taşımacılık &<br><em>Kurye Hizmeti</em><br>Kuzey Hollanda</h1>
-    <p class="hero-desc t-nl">Snel, betrouwbaar en persoonlijk transport door heel Nederland én Duitsland. Pallets, meubels, motorfietsen en spoedritten — altijd direct contact met de ondernemer.</p>
-    <p class="hero-desc t-en">Fast, reliable and personal transport throughout the Netherlands and Germany. Pallets, furniture, motorcycles and urgent deliveries — always direct contact.</p>
-    <p class="hero-desc t-de">Schnelles, zuverlässiges Transport in den Niederlanden und Deutschland. Paletten, Möbel, Motorräder und Eillieferungen.</p>
+    <p class="hero-desc t-nl">Snel, betrouwbaar en persoonlijk transport door heel heel Europa & Turkije. Pallets, meubels, motorfietsen en spoedritten — altijd direct contact met de ondernemer.</p>
+    <p class="hero-desc t-en">Fast, reliable and personal transport throughout Europe and Turkey. Pallets, furniture, motorcycles and urgent deliveries — always direct contact.</p>
+    <p class="hero-desc t-de">Schnelles, zuverlässiges Transport durch ganz Europa und die Türkei. Paletten, Möbel, Motorräder und Eillieferungen.</p>
     <p class="hero-desc t-tr">Hollanda ve Almanya genelinde hızlı, güvenilir taşımacılık. Palet, mobilya, motosiklet ve acil teslimatlar.</p>
     <div class="hero-btns">
       <a href="#calculator" class="btn-p t-nl">Prijs berekenen →</a>
@@ -250,7 +271,7 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
     </div>
     <div class="hero-stats">
       <div><div class="hs-num">24<span>/7</span></div><div class="hs-lbl t-nl">Bereikbaar</div><div class="hs-lbl t-en">Available</div><div class="hs-lbl t-de">Erreichbar</div><div class="hs-lbl t-tr">Ulaşılabilir</div></div>
-      <div><div class="hs-num">NL<span>+DE</span></div><div class="hs-lbl t-nl">Dekking</div><div class="hs-lbl t-en">Coverage</div><div class="hs-lbl t-de">Abdeckung</div><div class="hs-lbl t-tr">Kapsam</div></div>
+      <div><div class="hs-num">EU<span>+TR</span></div><div class="hs-lbl t-nl">Dekking</div><div class="hs-lbl t-en">Coverage</div><div class="hs-lbl t-de">Abdeckung</div><div class="hs-lbl t-tr">Kapsam</div></div>
       <div><div class="hs-num">€<span>85</span></div><div class="hs-lbl t-nl">Minimumtarief</div><div class="hs-lbl t-en">Min. rate</div><div class="hs-lbl t-de">Mindesttarif</div><div class="hs-lbl t-tr">Min. tarife</div></div>
       <div><div class="hs-num">1<span>T</span></div><div class="hs-lbl t-nl">Max. laadverm.</div><div class="hs-lbl t-en">Max. load</div><div class="hs-lbl t-de">Max. Last</div><div class="hs-lbl t-tr">Maks. yük</div></div>
     </div>
@@ -262,7 +283,7 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
   <div class="ti"><div class="ti-icon">🛡️</div><span class="t-nl">Verzekerd vervoer</span><span class="t-en">Insured transport</span><span class="t-de">Versicherter Transport</span><span class="t-tr">Sigortalı taşıma</span></div>
   <div class="ti"><div class="ti-icon">⚡</div><span class="t-nl">Binnen 45 min ter plaatse</span><span class="t-en">Within 45 min on-site</span><span class="t-de">In 45 Min. vor Ort</span><span class="t-tr">45 dk içinde</span></div>
   <div class="ti"><div class="ti-icon">📞</div><span class="t-nl">Direct de ondernemer</span><span class="t-en">Direct entrepreneur</span><span class="t-de">Direkter Kontakt</span><span class="t-tr">Doğrudan girişimci</span></div>
-  <div class="ti"><div class="ti-icon">🌍</div><span>NL & Duitsland</span></div>
+  <div class="ti"><div class="ti-icon">🌍</div><span>Europa & Turkije</span></div>
   <div class="ti"><div class="ti-icon">📦</div><span>Max. 1.000 kg</span></div>
 </div>
 
@@ -366,12 +387,12 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
   <div class="sec-lbl t-nl">Onze Diensten</div><div class="sec-lbl t-en">Our Services</div><div class="sec-lbl t-de">Unsere Leistungen</div><div class="sec-lbl t-tr">Hizmetlerimiz</div>
   <div class="sec-ttl t-nl">Wat wij vervoeren</div><div class="sec-ttl t-en">What we transport</div><div class="sec-ttl t-de">Was wir transportieren</div><div class="sec-ttl t-tr">Ne taşıyoruz</div>
   <div class="srv-grid">
-    <div class="srv"><div class="srv-n">01</div><div class="srv-i">📦</div><h3 class="t-nl">Pallettransport</h3><h3 class="t-en">Pallet Transport</h3><h3 class="t-de">Palettentransport</h3><h3 class="t-tr">Palet Taşıma</h3><p class="t-nl">Industriële goederen en bouwmaterialen tot 1.000 kg. NL & Duitsland.</p><p class="t-en">Industrial goods up to 1,000 kg. NL & Germany.</p><p class="t-de">Industriegüter bis 1.000 kg. NL & Deutschland.</p><p class="t-tr">Endüstriyel mallar maks. 1.000 kg. NL & DE.</p><span class="srv-tag">NL & DE</span></div>
+    <div class="srv"><div class="srv-n">01</div><div class="srv-i">📦</div><h3 class="t-nl">Pallettransport</h3><h3 class="t-en">Pallet Transport</h3><h3 class="t-de">Palettentransport</h3><h3 class="t-tr">Palet Taşıma</h3><p class="t-nl">Industriële goederen en bouwmaterialen tot 1.000 kg. Europa & Turkije.</p><p class="t-en">Industrial goods up to 1,000 kg. Europe & Turkey.</p><p class="t-de">Industriegüter bis 1.000 kg. Europa & Türkei.</p><p class="t-tr">Endüstriyel mallar maks. 1.000 kg. Europa.</p><span class="srv-tag">Europa</span></div>
     <div class="srv"><div class="srv-n">02</div><div class="srv-i">🛋️</div><h3 class="t-nl">Meubelvervoer</h3><h3 class="t-en">Furniture</h3><h3 class="t-de">Möbeltransport</h3><h3 class="t-tr">Mobilya</h3><p class="t-nl">Meubels en witgoed zorgvuldig verpakt en geleverd.</p><p class="t-en">Furniture and white goods carefully delivered.</p><p class="t-de">Möbel sorgfältig geliefert.</p><p class="t-tr">Mobilya özenle teslim edilir.</p><span class="srv-tag t-nl">Incl. inpakservice</span><span class="srv-tag t-en">Incl. packing</span><span class="srv-tag t-de">Inkl. Verpackung</span><span class="srv-tag t-tr">Ambalaj dahil</span></div>
     <div class="srv"><div class="srv-n">03</div><div class="srv-i">🏍️</div><h3 class="t-nl">Motorfietstransport</h3><h3 class="t-en">Motorcycle</h3><h3 class="t-de">Motorradtransport</h3><h3 class="t-tr">Motosiklet</h3><p class="t-nl">Professioneel vastgezet en schadevrij geleverd.</p><p class="t-en">Professionally secured and damage-free delivered.</p><p class="t-de">Professionell gesichert, schadensfreie Lieferung.</p><p class="t-tr">Profesyonelce sabitlenir, hasarsız teslim.</p><span class="srv-tag t-nl">Schadevrij</span><span class="srv-tag t-en">Damage-free</span><span class="srv-tag t-de">Schadenfrei</span><span class="srv-tag t-tr">Hasarsız</span></div>
     <div class="srv"><div class="srv-n">04</div><div class="srv-i">⚡</div><h3 class="t-nl">Spoedtransport</h3><h3 class="t-en">Urgent</h3><h3 class="t-de">Eillieferung</h3><h3 class="t-tr">Acil Taşıma</h3><p class="t-nl">Vandaag besteld, vandaag geleverd. Dag en nacht. Vertrek binnen 45 min.</p><p class="t-en">Ordered today, delivered today. Day and night.</p><p class="t-de">Heute bestellt, heute geliefert. Tag und Nacht.</p><p class="t-tr">Bugün sipariş, bugün teslimat. Gündüz gece.</p><span class="srv-tag">24/7</span></div>
     <div class="srv"><div class="srv-n">05</div><div class="srv-i">🏢</div><h3 class="t-nl">Zakelijk</h3><h3 class="t-en">Business</h3><h3 class="t-de">Geschäftlich</h3><h3 class="t-tr">Kurumsal</h3><p class="t-nl">Vaste zakelijke ritten. Maandelijkse factuur, betrouwbaar en op tijd.</p><p class="t-en">Regular business runs. Monthly invoice, reliable.</p><p class="t-de">Regelmäßige Geschäftsfahrten. Monatliche Rechnung.</p><p class="t-tr">Düzenli iş seferleri. Aylık fatura.</p><span class="srv-tag t-nl">Vaste tarieven</span><span class="srv-tag t-en">Fixed rates</span><span class="srv-tag t-de">Festpreise</span><span class="srv-tag t-tr">Sabit fiyatlar</span></div>
-    <div class="srv"><div class="srv-n">06</div><div class="srv-i">🇩🇪</div><h3 class="t-nl">Duitsland</h3><h3 class="t-en">Germany</h3><h3 class="t-de">Deutschland</h3><h3 class="t-tr">Almanya</h3><p class="t-nl">Grensoverschrijdend transport naar Duitsland. Betrouwbaar en op tijd.</p><p class="t-en">Cross-border transport to Germany. Reliable and on time.</p><p class="t-de">Grenzüberschreitend nach Deutschland.</p><p class="t-tr">Almanya'ya sınır ötesi taşıma.</p><span class="srv-tag t-nl">NL & Duitsland</span><span class="srv-tag t-en">NL & Germany</span><span class="srv-tag t-de">NL & DE</span><span class="srv-tag t-tr">NL & Almanya</span></div>
+    <div class="srv"><div class="srv-n">06</div><div class="srv-i">🌍</div><h3 class="t-nl">Internationaal</h3><h3 class="t-en">International</h3><h3 class="t-de">International</h3><h3 class="t-tr">Uluslararası</h3><p class="t-nl">Transport door heel Europa en Turkije. Duitsland, Frankrijk, Polen, België en meer.</p><p class="t-en">Transport throughout Europe and Turkey. Germany, France, Poland, Belgium and more.</p><p class="t-de">Transport durch ganz Europa und die Türkei. Deutschland, Frankreich, Polen und mehr.</p><p class="t-tr">Tüm Avrupa ve Türkiye'ye taşımacılık. Almanya, Fransa, Polonya, Belçika ve daha fazlası.</p><span class="srv-tag t-nl">Europa & Turkije</span><span class="srv-tag t-en">Europe & Turkey</span><span class="srv-tag t-de">Europa & Türkei</span><span class="srv-tag t-tr">Avrupa & Türkiye</span></div>
   </div>
 </section>
 
@@ -380,35 +401,35 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
   <div>
     <div class="sec-lbl t-nl">Over Ons</div><div class="sec-lbl t-en">About Us</div><div class="sec-lbl t-de">Über Uns</div><div class="sec-lbl t-tr">Hakkımızda</div>
     <h2 class="t-nl">Jong bedrijf.<br>Serieuze service.</h2><h2 class="t-en">Young company.<br>Serious service.</h2><h2 class="t-de">Junges Unternehmen.<br>Ernsthafter Service.</h2><h2 class="t-tr">Genç şirket.<br>Ciddi hizmet.</h2>
-    <p class="t-nl">Gevestigd in Hoogeveen rijden wij door heel Nederland én Duitsland. Van spoedrit tot internationale levering — snel, veilig, zonder gedoe. Altijd direct contact met de ondernemer.</p>
-    <p class="t-en">Based in Hoogeveen we operate throughout the Netherlands and Germany. From urgent runs to international deliveries — fast, safe, no hassle.</p>
-    <p class="t-de">Mit Sitz in Hoogeveen sind wir in den Niederlanden und Deutschland tätig. Sie sprechen immer direkt mit dem Unternehmer.</p>
-    <p class="t-tr">Hoogeveen merkezli olarak tüm Hollanda ve Almanya'da faaliyet gösteriyoruz.</p>
+    <p class="t-nl">Gevestigd in Hoogeveen rijden wij door heel heel Europa & Turkije. Van spoedrit tot internationale levering — snel, veilig, zonder gedoe. Altijd direct contact met de ondernemer.</p>
+    <p class="t-en">Based in Hoogeveen we operate throughout Europe and Turkey. From urgent runs to international deliveries — fast, safe, no hassle.</p>
+    <p class="t-de">Mit Sitz in Hoogeveen sind wir durch ganz Europa und die Türkei tätig. Sie sprechen immer direkt mit dem Unternehmer.</p>
+    <p class="t-tr">Hoogeveen merkezli olarak tüm Avrupa ve Türkiye'de faaliyet gösteriyoruz.</p>
   </div>
   <div>
     <div class="ci t-nl"><div class="ci-check">✓</div><span>Pallets, bouwmaterialen en industriële lading tot 1.000 kg</span></div>
     <div class="ci t-nl"><div class="ci-check">✓</div><span>Meubels, witgoed en complete verhuizingen</span></div>
     <div class="ci t-nl"><div class="ci-check">✓</div><span>Motorfietsen — schadevrij gegarandeerd</span></div>
     <div class="ci t-nl"><div class="ci-check">✓</div><span>Spoedritten dag en nacht, 7 dagen per week</span></div>
-    <div class="ci t-nl"><div class="ci-check">✓</div><span>Heel Nederland én Duitsland — grensoverschrijdend</span></div>
+    <div class="ci t-nl"><div class="ci-check">✓</div><span>Heel heel Europa & Turkije — grensoverschrijdend</span></div>
     <div class="ci t-nl"><div class="ci-check">✓</div><span>Direct contact met de ondernemer — altijd bereikbaar</span></div>
     <div class="ci t-en"><div class="ci-check">✓</div><span>Pallets, building materials and cargo up to 1,000 kg</span></div>
     <div class="ci t-en"><div class="ci-check">✓</div><span>Furniture, white goods and complete relocations</span></div>
     <div class="ci t-en"><div class="ci-check">✓</div><span>Motorcycles — damage-free guaranteed</span></div>
     <div class="ci t-en"><div class="ci-check">✓</div><span>Urgent runs day and night, 7 days a week</span></div>
-    <div class="ci t-en"><div class="ci-check">✓</div><span>Netherlands & Germany — cross-border</span></div>
+    <div class="ci t-en"><div class="ci-check">✓</div><span>Europe & Turkey — international</span></div>
     <div class="ci t-en"><div class="ci-check">✓</div><span>Direct contact with the entrepreneur — always</span></div>
     <div class="ci t-de"><div class="ci-check">✓</div><span>Paletten und Industriefracht bis 1.000 kg</span></div>
     <div class="ci t-de"><div class="ci-check">✓</div><span>Möbel, Haushaltsgeräte und Umzüge</span></div>
     <div class="ci t-de"><div class="ci-check">✓</div><span>Motorräder — schadensfreier Transport</span></div>
     <div class="ci t-de"><div class="ci-check">✓</div><span>Eilfahrten Tag und Nacht, 7 Tage die Woche</span></div>
-    <div class="ci t-de"><div class="ci-check">✓</div><span>Niederlande & Deutschland — grenzüberschreitend</span></div>
+    <div class="ci t-de"><div class="ci-check">✓</div><span>Europa & Türkei — international</span></div>
     <div class="ci t-de"><div class="ci-check">✓</div><span>Direkter Kontakt mit dem Unternehmer</span></div>
     <div class="ci t-tr"><div class="ci-check">✓</div><span>Palet ve endüstriyel yük, maks. 1.000 kg</span></div>
     <div class="ci t-tr"><div class="ci-check">✓</div><span>Mobilya, beyaz eşya ve komple taşınma</span></div>
     <div class="ci t-tr"><div class="ci-check">✓</div><span>Motosiklet — hasarsız garanti</span></div>
     <div class="ci t-tr"><div class="ci-check">✓</div><span>Gündüz gece acil sefer, haftada 7 gün</span></div>
-    <div class="ci t-tr"><div class="ci-check">✓</div><span>Tüm Hollanda & Almanya — sınır ötesi</span></div>
+    <div class="ci t-tr"><div class="ci-check">✓</div><span>Tüm Avrupa & Türkiye — uluslararası</span></div>
     <div class="ci t-tr"><div class="ci-check">✓</div><span>Girişimciyle doğrudan iletişim — her zaman</span></div>
   </div>
 </section>
@@ -418,14 +439,68 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
   <div>
     <div class="sec-lbl" style="margin-bottom:12px">Contact</div>
     <h2 class="t-nl">Laten we kennismaken.</h2><h2 class="t-en">Let's get in touch.</h2><h2 class="t-de">Lassen Sie uns sprechen.</h2><h2 class="t-tr">Tanışalım.</h2>
-    <p class="t-nl">Transportvraag of offerte nodig? Bereken hierboven of neem contact op. Wij reageren snel.</p>
-    <p class="t-en">Transport question or need a quote? Calculate above or get in touch. We respond fast.</p>
-    <p class="t-de">Transportfrage? Berechnen Sie oben oder kontaktieren Sie uns direkt.</p>
-    <p class="t-tr">Taşımacılık sorusu? Yukarıdan hesaplayın veya iletişime geçin.</p>
-    <a href="tel:0684915585" class="btn-p t-nl" style="display:inline-flex">📞 Bel Nu — 06 849 155 85</a>
-    <a href="tel:0684915585" class="btn-p t-en" style="display:inline-flex">📞 Call Now — 06 849 155 85</a>
-    <a href="tel:0684915585" class="btn-p t-de" style="display:inline-flex">📞 Anrufen — 06 849 155 85</a>
-    <a href="tel:0684915585" class="btn-p t-tr" style="display:inline-flex">📞 Ara — 06 849 155 85</a>
+    <p class="t-nl">Heeft u een vraag of wilt u een offerte? Vul het formulier in en wij nemen direct contact op via WhatsApp of e-mail.</p>
+    <p class="t-en">Have a question or want a quote? Fill in the form and we will contact you directly via WhatsApp or e-mail.</p>
+    <p class="t-de">Haben Sie eine Frage oder möchten Sie ein Angebot? Füllen Sie das Formular aus.</p>
+    <p class="t-tr">Sorunuz mu var veya teklif mi istiyorsunuz? Formu doldurun, hemen iletişime geçelim.</p>
+
+    <!-- CONTACT FORM -->
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-nl">Voornaam</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-en">First name</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-de">Vorname</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-tr">Ad</label>
+          <input type="text" id="cf-fname" placeholder="Jan" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-nl">Achternaam</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-en">Last name</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-de">Nachname</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-tr">Soyad</label>
+          <input type="text" id="cf-lname" placeholder="Jansen" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Email</label>
+          <input type="email" id="cf-email" placeholder="jan@example.com" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-nl">Telefoon</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-en">Phone</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-de">Telefon</label>
+          <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-tr">Telefon</label>
+          <input type="tel" id="cf-phone" placeholder="06 12345678" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+      </div>
+      <div>
+        <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-nl">Uw bericht</label>
+        <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-en">Your message</label>
+        <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-de">Ihre Nachricht</label>
+        <label style="font-size:11px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px" class="t-tr">Mesajınız</label>
+        <textarea id="cf-msg" rows="4" placeholder="..." style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:inherit;outline:none;resize:vertical;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+      </div>
+      <button onclick="submitForm()" style="background:var(--blue);color:#fff;border:none;padding:14px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+        <span class="t-nl">Verstuur aanvraag →</span>
+        <span class="t-en">Send request →</span>
+        <span class="t-de">Anfrage senden →</span>
+        <span class="t-tr">Gönder →</span>
+      </button>
+      <div id="cf-ok" style="display:none;background:rgba(29,158,117,0.15);border:1px solid var(--green);border-radius:10px;padding:14px;text-align:center;color:var(--green);font-weight:600;font-size:14px;">
+        ✓ <span class="t-nl">Bericht verzonden! Wij nemen snel contact op.</span>
+        <span class="t-en">Message sent! We will contact you soon.</span>
+        <span class="t-de">Nachricht gesendet! Wir melden uns bald.</span>
+        <span class="t-tr">Mesaj gönderildi! En kısa sürede iletişime geçeceğiz.</span>
+      </div>
+      <div id="cf-err" style="display:none;background:rgba(226,75,74,0.12);border:1px solid var(--red);border-radius:10px;padding:14px;text-align:center;color:var(--red);font-weight:600;font-size:14px;">
+        <span class="t-nl">Er ging iets mis. Bel ons direct: 06 849 155 85</span>
+        <span class="t-en">Something went wrong. Call us: +31 6 849 155 85</span>
+        <span class="t-de">Etwas ist schiefgelaufen. Rufen Sie uns an: +31 6 849 155 85</span>
+        <span class="t-tr">Bir hata oluştu. Bizi arayın: +31 6 849 155 85</span>
+      </div>
+    </div>
   </div>
   <div>
     <div class="c-item"><div class="c-icon">📞</div><div><div class="c-lbl t-nl">Telefoon</div><div class="c-lbl t-en">Phone</div><div class="c-lbl t-de">Telefon</div><div class="c-lbl t-tr">Telefon</div><div class="c-val"><a href="tel:0684915585">06 849 155 85</a></div></div></div>
@@ -441,6 +516,48 @@ footer p{color:rgba(255,255,255,0.22);font-size:11px;}
 </footer>
 
 <script>
+// ═══ EMAILJS ═══
+emailjs.init('T4hm9u-y0O2Sr60j5');
+
+function submitForm(){
+  var fname=document.getElementById('cf-fname').value.trim();
+  var lname=document.getElementById('cf-lname').value.trim();
+  var email=document.getElementById('cf-email').value.trim();
+  var phone=document.getElementById('cf-phone').value.trim();
+  var msg=document.getElementById('cf-msg').value.trim();
+
+  if(!fname||!email||!msg){
+    alert('Vul naam, e-mail en bericht in!');
+    return;
+  }
+
+  var params={
+    from_name: fname+' '+lname,
+    from_email: email,
+    phone: phone||'—',
+    message: msg,
+    to_email: 'contact@drenthetransport.com'
+  };
+
+  // EmailJS ile mail gönder
+  emailjs.send('service_wj57vtj','template_ag3cgmw',params)
+    .then(function(){
+      document.getElementById('cf-ok').style.display='block';
+      document.getElementById('cf-err').style.display='none';
+      document.getElementById('cf-fname').value='';
+      document.getElementById('cf-lname').value='';
+      document.getElementById('cf-email').value='';
+      document.getElementById('cf-phone').value='';
+      document.getElementById('cf-msg').value='';
+    },function(){
+      document.getElementById('cf-err').style.display='block';
+    });
+
+  // WhatsApp'a da bildirim
+  var waMsg='Yeni form başvurusu!\n\nAd: '+fname+' '+lname+'\nEmail: '+email+'\nTelefon: '+(phone||'—')+'\n\nMesaj:\n'+msg;
+  window.open('https://wa.me/31684915585?text='+encodeURIComponent(waMsg),'_blank');
+}
+
 // ═══ TAAL ═══
 var LANGS=['nl','en','de','tr'];
 function setLang(l){
@@ -465,11 +582,11 @@ function cityAC(inp,dropId){
   if(q.length<3){drop.classList.remove('open');return;}
   clearTimeout(acT);
   acT=setTimeout(function(){
-    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=de&bbox=3.3,50.7,15.1,55.1')
+    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=6&lang=de&bbox=-10,35,35,72')
     .then(function(r){return r.json();})
     .then(function(d){
       if(!d.features||!d.features.length){drop.classList.remove('open');return;}
-      var items=d.features.filter(function(f){var c=f.properties.countrycode;return c==='NL'||c==='DE'||c==='BE';}).slice(0,6);
+      var items=d.features.filter(function(f){var c=f.properties.countrycode;return ['NL','DE','BE','FR','PL','TR','LU'].indexOf(c)!==-1;}).slice(0,6);
       if(!items.length){drop.classList.remove('open');return;}
       drop.innerHTML=items.map(function(f){
         var p=f.properties;
