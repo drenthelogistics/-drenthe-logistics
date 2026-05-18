@@ -602,37 +602,39 @@ function acSearch(inp,dropId){
   if(q.length<2){drop.classList.remove('on');return;}
   clearTimeout(acTimer);
   acTimer=setTimeout(function(){
-    // Daha geniş bbox + daha fazla sonuç + sokak odaklı
-    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=8&lang=nl')
+    fetch('https://photon.komoot.io/api/?q='+encodeURIComponent(q)+'&limit=8&lang=nl&bbox=-5,45,20,56')
     .then(function(r){return r.json();})
     .then(function(d){
       if(!d.features||!d.features.length){drop.classList.remove('on');return;}
+      var seen={};
       var items=d.features.filter(function(f){
         var c=f.properties.countrycode;
         return ['NL','DE','BE','FR','PL','LU'].indexOf(c)!==-1;
+      }).filter(function(f){
+        // Tekrar önle
+        var p=f.properties;
+        var key=(p.city||p.town||p.village||p.name||'')+'|'+(p.street||'')+'|'+(p.housenumber||'');
+        if(seen[key]) return false;
+        seen[key]=true;
+        return true;
       }).slice(0,6);
       if(!items.length){drop.classList.remove('on');return;}
       drop.innerHTML=items.map(function(f){
         var p=f.properties;
-        // Sokak adresi önce, şehir sonra
         var lbl='';
+        var stad=p.city||p.town||p.village||'';
         if(p.housenumber&&p.street){
-          lbl=p.street+' '+p.housenumber;
-          if(p.city||p.town||p.village) lbl+=', '+(p.city||p.town||p.village);
-          if(p.postcode) lbl+=' '+p.postcode;
+          lbl=p.street+' '+p.housenumber+(stad?', '+stad:'');
+          if(p.postcode) lbl+=' ('+p.postcode+')';
         } else if(p.street){
-          lbl=p.street;
-          if(p.city||p.town||p.village) lbl+=', '+(p.city||p.town||p.village);
-        } else if(p.name){
-          lbl=p.name;
-          if(p.city||p.town||p.village) lbl+=', '+(p.city||p.town||p.village);
-          if(p.country) lbl+=', '+p.country;
+          lbl=p.street+(stad?', '+stad:'');
+        } else if(stad){
+          lbl=stad+(p.state?', '+p.state:'')+(p.country?', '+p.country:'');
         } else {
-          lbl=[p.city||p.town||p.village||'',p.state||'',p.country||''].filter(Boolean).join(', ');
+          lbl=p.name||'—';
         }
-        if(!lbl) lbl=p.name||'—';
         var lo=f.geometry.coordinates[0],la=f.geometry.coordinates[1];
-        return '<div class="acitem" onclick="acPick(\''+lbl.replace(/'/g,"\\'")+'\',' +
+        return '<div class="acitem" onclick="acPick(\''+lbl.replace(/\\/g,'\\\\').replace(/'/g,"\\'")+'\',' +
           '\''+inp.id+'\',\''+dropId+'\','+la+','+lo+')">'+lbl+'</div>';
       }).join('');
       drop.classList.add('on');
@@ -732,7 +734,8 @@ function calc(){
   else if(extras.night){rate=0.95;minFee=120;}
   else if(extras.weekend){rate=0.90;minFee=95;}
 
-  var kmCost=km*2*rate;
+  var totalKm=km*2; // gidiş-dönüş
+  var kmCost=totalKm*rate;
   var net=Math.ceil(Math.max(minFee,kmCost)/5)*5;
   var btw=Math.round(net*0.21);
   var tot=net+btw;
@@ -747,7 +750,7 @@ function calc(){
   sht('p-net',fmtM(net));
   sht('p-btw','+'+fmtM(btw));
   sht('p-tot2',fmtM(tot));
-  sht('p-sub',km+' km · '+tarief+' · €'+rate.toFixed(2)+'/km');
+  sht('p-sub',km+' km enkel · '+km*2+' km retour · '+tarief+' · €'+rate.toFixed(2)+'/km');
 
   document.getElementById('wa-btn').disabled=false;
   document.getElementById('save-btn').disabled=false;
