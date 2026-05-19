@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Drenthe Transport</title>
+<title>BluePort Transport</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -169,7 +169,7 @@ summary{font-size:12px;font-weight:600;color:var(--gray);cursor:pointer;text-tra
     <path d="M70 38 L70 88 L82 88 Q103 88 103 63 Q103 38 82 38 Z" fill="#0A1628"/>
     <path d="M134 22 L134 104 L182 104" fill="none" stroke="#4a9fd4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="202" y1="28" x2="202" y2="108" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">DRENTHE</text>
+    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">BLUEPORT</text>
     <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">TRANSPORT</text>
   </svg>
   <div style="font-size:12px;color:var(--gray);letter-spacing:1px;">İŞ UYGULAMASI</div>
@@ -187,7 +187,7 @@ summary{font-size:12px;font-weight:600;color:var(--gray);cursor:pointer;text-tra
     <path d="M70 38 L70 88 L82 88 Q103 88 103 63 Q103 38 82 38 Z" fill="#0A1628"/>
     <path d="M134 22 L134 104 L182 104" fill="none" stroke="#4a9fd4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="202" y1="28" x2="202" y2="108" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">DRENTHE</text>
+    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">BLUEPORT</text>
     <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">TRANSPORT</text>
   </svg>
   <div class="hdr-date" id="hdate"></div>
@@ -767,7 +767,7 @@ function getMsg(){
   var btw=Math.round(curNet*0.21);
   return greet+'\n\nHierbij uw vrijblijvende offerte:\n\nNereden: '+from+'\nNereye: '+to+
     '\n\nNet: EUR '+curNet+'\nBTW (21%): EUR '+btw+'\nTotaal: EUR '+curTot+
-    '\n\nVrijblijvende prijsopgave.\nBetaling per pin of contant bij levering.\n\nMet vriendelijke groet,\nGuney\nDrenthe Transport\nTel: 06 849 155 85\nwww.drenthetransport.com';
+    '\n\nVrijblijvende prijsopgave.\nBetaling per pin of contant bij levering.\n\nMet vriendelijke groet,\nGuney\nBluePort Transport\nTel: 06 849 155 85\nwww.drenthetransport.com';
 }
 
 function updateWA(){}
@@ -779,12 +779,12 @@ function sendWA(){
 }
 
 var qTexts={
-  onderweg:'Goedendag,\n\nIk ben onderweg naar u! Verwachte aankomsttijd: [TIJD] uur.\n\nMet vriendelijke groet,\nGuney\nDrenthe Transport\nTel: 06 849 155 85',
-  tracking:'Goedendag,\n\nU kunt mij live volgen via Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nGroet,\nGuney\nDrenthe Transport',
-  geleverd:'Goedendag,\n\nUw zending is succesvol afgeleverd!\n\nHartelijk dank voor uw vertrouwen.\n\nMet vriendelijke groet,\nGuney\nDrenthe Transport\nTel: 06 849 155 85',
-  bevestig:'Goedendag,\n\nIk bevestig de rit:\nNereden: [VAN]\nNereye: [NAAR]\nTarih: [DATUM] om [TIJD]\nPrijs: EUR [PRIJS]\n\nTot dan!\nGuney\nDrenthe Transport',
-  niet:'Goedendag,\n\nHelaas ben ik op [DATUM] niet beschikbaar.\n\nHeeft u een andere datum?\n\nGroet,\nGuney\nDrenthe Transport\nTel: 06 849 155 85',
-  betaling:'Goedendag,\n\nHet openstaande bedrag is EUR [BEDRAG].\nBetaling per pin of contant.\n\nAlvast bedankt!\nDrenthe Transport\nTel: 06 849 155 85'
+  onderweg:'Goedendag,\n\nIk ben onderweg naar u! Verwachte aankomsttijd: [TIJD] uur.\n\nMet vriendelijke groet,\nGuney\nBluePort Transport\nTel: 06 849 155 85',
+  tracking:'Goedendag,\n\nU kunt mij live volgen via Google Maps:\nhttps://maps.google.com/maps?q=[UW+LOCATIE]\n\nGroet,\nGuney\nBluePort Transport',
+  geleverd:'Goedendag,\n\nUw zending is succesvol afgeleverd!\n\nHartelijk dank voor uw vertrouwen.\n\nMet vriendelijke groet,\nGuney\nBluePort Transport\nTel: 06 849 155 85',
+  bevestig:'Goedendag,\n\nIk bevestig de rit:\nNereden: [VAN]\nNereye: [NAAR]\nTarih: [DATUM] om [TIJD]\nPrijs: EUR [PRIJS]\n\nTot dan!\nGuney\nBluePort Transport',
+  niet:'Goedendag,\n\nHelaas ben ik op [DATUM] niet beschikbaar.\n\nHeeft u een andere datum?\n\nGroet,\nGuney\nBluePort Transport\nTel: 06 849 155 85',
+  betaling:'Goedendag,\n\nHet openstaande bedrag is EUR [BEDRAG].\nBetaling per pin of contant.\n\nAlvast bedankt!\nBluePort Transport\nTel: 06 849 155 85'
 };
 
 function copyQ(key){

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drenthe Transport — Factuur</title>
+<title>BluePort Transport — Factuur</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -144,7 +144,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);}
     <path d="M70 38 L70 88 L82 88 Q103 88 103 63 Q103 38 82 38 Z" fill="#0A1628"/>
     <path d="M134 22 L134 104 L182 104" fill="none" stroke="#4a9fd4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="202" y1="28" x2="202" y2="108" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">DRENTHE</text>
+    <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="white" letter-spacing="1">BLUEPORT</text>
     <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#4a9fd4" letter-spacing="4">TRANSPORT</text>
   </svg>
   <span style="color:#8A9BB0;font-size:11px;letter-spacing:1px;text-transform:uppercase">Factuur Systeem</span>
@@ -250,7 +250,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);}
           <path d="M70 38 L70 88 L82 88 Q103 88 103 63 Q103 38 82 38 Z" fill="white"/>
           <path d="M134 22 L134 104 L182 104" fill="none" stroke="#1E6FC8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
           <line x1="202" y1="28" x2="202" y2="108" stroke="#DDE5F0" stroke-width="1.5"/>
-          <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="#0D2B5E" letter-spacing="1">DRENTHE</text>
+          <text x="220" y="72" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="#0D2B5E" letter-spacing="1">BLUEPORT</text>
           <text x="222" y="103" font-family="'Arial Black',Arial,sans-serif" font-size="30" font-weight="900" fill="#1E6FC8" letter-spacing="4">TRANSPORT</text>
         </svg>
       </div>
@@ -259,7 +259,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);}
     <div class="inv-addresses">
       <div class="inv-addr">
         <h4 id="inv-from-lbl">Van</h4>
-        <p>Drenthe Transport<br>Hoogeveen, Drenthe<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com</p>
+        <p>BluePort Transport<br>Hoogeveen, Drenthe<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com<br>KVK: 42062869</p>
       </div>
       <div class="inv-addr">
         <h4 id="inv-to-lbl">Aan</h4>
@@ -296,7 +296,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);}
         <p id="inv-payment">Gelieve het totaalbedrag binnen 14 dagen over te maken.<br>BTW 21% is inbegrepen in het totaalbedrag.</p>
       </div>
       <div>
-        <p>Drenthe Transport<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com</p>
+        <p>BluePort Transport<br>contact@drenthetransport.com<br>06 849 155 85<br>drenthetransport.com<br>KVK: 42062869</p>
       </div>
     </div>
   </div>
@@ -325,9 +325,9 @@ var saved = JSON.parse(localStorage.getItem('dl_invoices') || '[]');
 var currentLink = '';
 
 var TR = {
-  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (21%)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. BTW 21% is inbegrepen in het totaalbedrag.', pbar:'Uw factuur van Drenthe Transport' },
-  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (21%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. VAT 21% is included in the total amount.', pbar:'Your invoice from Drenthe Transport' },
-  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (21%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. MwSt. 21% ist im Gesamtbetrag enthalten.', pbar:'Ihre Rechnung von Drenthe Transport' }
+  nl: { badge:'FACTUUR', from:'Van', to:'Aan', nr:'Factuurnummer', date:'Factuurdatum', due:'Vervaldatum', desc:'Omschrijving', qty:'Aantal', unit:'Eenheidsprijs', total:'Totaal', sub:'Subtotaal', btw:'BTW (21%)', tot:'Totaalbedrag', thanks:'Hartelijk dank voor uw vertrouwen!', payment:'Gelieve het totaalbedrag binnen 14 dagen over te maken. BTW 21% is inbegrepen in het totaalbedrag.', pbar:'Uw factuur van BluePort Transport' },
+  en: { badge:'INVOICE', from:'From', to:'To', nr:'Invoice number', date:'Invoice date', due:'Due date', desc:'Description', qty:'Quantity', unit:'Unit price', total:'Total', sub:'Subtotal', btw:'VAT (21%)', tot:'Total amount', thanks:'Thank you for your business!', payment:'Please transfer the total amount within 14 days. VAT 21% is included in the total amount.', pbar:'Your invoice from BluePort Transport' },
+  de: { badge:'RECHNUNG', from:'Von', to:'An', nr:'Rechnungsnummer', date:'Rechnungsdatum', due:'Fälligkeitsdatum', desc:'Beschreibung', qty:'Menge', unit:'Einzelpreis', total:'Gesamt', sub:'Zwischensumme', btw:'MwSt. (21%)', tot:'Gesamtbetrag', thanks:'Herzlichen Dank für Ihr Vertrauen!', payment:'Bitte überweisen Sie den Gesamtbetrag innerhalb von 14 Tagen. MwSt. 21% ist im Gesamtbetrag enthalten.', pbar:'Ihre Rechnung von BluePort Transport' }
 };
 
 function fmtM(n) { return '€ ' + n.toFixed(2).replace('.', ','); }
@@ -447,9 +447,9 @@ function sendWA() {
   var nr = document.getElementById('inv-nr').value || '—';
   var lang = document.getElementById('inv-lang').value;
   var msgs = {
-    nl: 'Hallo,\n\nHierbij uw factuur van Drenthe Transport:\n' + currentLink + '\n\nU kunt de factuur openen en als PDF downloaden.\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n06 849 155 85',
-    en: 'Hello,\n\nPlease find your invoice from Drenthe Transport:\n' + currentLink + '\n\nYou can open and download the invoice as PDF.\n\nKind regards,\nGüney\nDrenthe Transport\n+31 6 849 155 85',
-    de: 'Hallo,\n\nHier ist Ihre Rechnung von Drenthe Transport:\n' + currentLink + '\n\nSie können die Rechnung öffnen und als PDF herunterladen.\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n+31 6 849 155 85'
+    nl: 'Hallo,\n\nHierbij uw factuur van BluePort Transport:\n' + currentLink + '\n\nU kunt de factuur openen en als PDF downloaden.\n\nMet vriendelijke groet,\nGüney\nBluePort Transport\n06 849 155 85',
+    en: 'Hello,\n\nPlease find your invoice from BluePort Transport:\n' + currentLink + '\n\nYou can open and download the invoice as PDF.\n\nKind regards,\nGüney\nBluePort Transport\n+31 6 849 155 85',
+    de: 'Hallo,\n\nHier ist Ihre Rechnung von BluePort Transport:\n' + currentLink + '\n\nSie können die Rechnung öffnen und als PDF herunterladen.\n\nMit freundlichen Grüßen,\nGüney\nBluePort Transport\n+31 6 849 155 85'
   };
   var text = encodeURIComponent(msgs[lang]);
   window.open('https://wa.me/?text=' + text, '_blank');
@@ -458,11 +458,11 @@ function sendWA() {
 function openMailModal() {
   var lang = document.getElementById('inv-lang').value;
   var nr = document.getElementById('inv-nr').value || '—';
-  var subjects = { nl:'Factuur '+nr+' — Drenthe Transport', en:'Invoice '+nr+' — Drenthe Transport', de:'Rechnung '+nr+' — Drenthe Transport' };
+  var subjects = { nl:'Factuur '+nr+' — BluePort Transport', en:'Invoice '+nr+' — BluePort Transport', de:'Rechnung '+nr+' — BluePort Transport' };
   var msgs = {
-    nl:'Geachte heer/mevrouw,\n\nHierbij ontvangt u uw factuur van Drenthe Transport.\n\nU kunt de factuur bekijken en als PDF downloaden via onderstaande link:\n\n' + currentLink + '\n\nMet vriendelijke groet,\nGüney\nDrenthe Transport\n06 849 155 85\ncontact@drenthetransport.com',
-    en:'Dear Sir/Madam,\n\nPlease find your invoice from Drenthe Transport.\n\nYou can view and download the invoice as PDF via the link below:\n\n' + currentLink + '\n\nKind regards,\nGüney\nDrenthe Transport\n+31 6 849 155 85\ncontact@drenthetransport.com',
-    de:'Sehr geehrte Damen und Herren,\n\nHier ist Ihre Rechnung von Drenthe Transport.\n\nSie können die Rechnung über den folgenden Link einsehen und als PDF herunterladen:\n\n' + currentLink + '\n\nMit freundlichen Grüßen,\nGüney\nDrenthe Transport\n+31 6 849 155 85\ncontact@drenthetransport.com'
+    nl:'Geachte heer/mevrouw,\n\nHierbij ontvangt u uw factuur van BluePort Transport.\n\nU kunt de factuur bekijken en als PDF downloaden via onderstaande link:\n\n' + currentLink + '\n\nMet vriendelijke groet,\nGüney\nBluePort Transport\n06 849 155 85\ncontact@drenthetransport.com',
+    en:'Dear Sir/Madam,\n\nPlease find your invoice from BluePort Transport.\n\nYou can view and download the invoice as PDF via the link below:\n\n' + currentLink + '\n\nKind regards,\nGüney\nBluePort Transport\n+31 6 849 155 85\ncontact@drenthetransport.com',
+    de:'Sehr geehrte Damen und Herren,\n\nHier ist Ihre Rechnung von BluePort Transport.\n\nSie können die Rechnung über den folgenden Link einsehen und als PDF herunterladen:\n\n' + currentLink + '\n\nMit freundlichen Grüßen,\nGüney\nBluePort Transport\n+31 6 849 155 85\ncontact@drenthetransport.com'
   };
   document.getElementById('send-subject').value = subjects[lang];
   document.getElementById('send-msg').value = msgs[lang];
@@ -614,7 +614,7 @@ function renderViewer(data) {
   document.getElementById('inv-btw-lbl').textContent = t.btw;
   document.getElementById('inv-tot').textContent = fmtM(total);
   if (data.note) { var nb=document.getElementById('inv-note-box'); nb.textContent=data.note; nb.style.display='block'; }
-  document.title = t.badge + ' ' + (data.nr||'') + ' — Drenthe Transport';
+  document.title = t.badge + ' ' + (data.nr||'') + ' — BluePort Transport';
 }
 
 loadFromURL();
